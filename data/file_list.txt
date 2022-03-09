@@ -1,0 +1,9 @@
+bom.movie_gross.csv.gz
+imdb.name.basics.csv.gz
+imdb.title.akas.csv.gz
+imdb.title.basics.csv.gz
+imdb.title.crew.csv.gz
+imdb.title.principals.csv.gz
+imdb.title.ratings.csv.gz
+tmdb.movies.csv.gz
+tn.movie_budgets.csv.gz
