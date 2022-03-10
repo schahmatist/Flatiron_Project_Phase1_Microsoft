@@ -24,15 +24,11 @@ Our data was pooled from a variety of sources including but not limited to the I
 Utilizing data analysis methods including descriptive analysis, graphing trends over time and correlations among others, valuable insights were made to chart a statistically founded path towards success
 
 ## Results 
-![profit_by_year.png](attachment/Users/austinboring/Flatiron/Phase-1/Flatiron_Project_Phase1_Microsoft/images/profit_by_year.png)
-x
 
-![misc_profit_correlations.png](attachment/Users/austinboring/Flatiron/Phase-1/Flatiron_Project_Phase1_Microsoft/images/profit_by_year.png)
-x
-  
-![profit_by_genre.png](/Users/austinboring/Flatiron/Phase-1/Flatiron_Project_Phase1_Microsoft/images/profit_by_year.png)
-
-
+<p align="center">
+  <img src=https://github.com/schahmatist/Flatiron_Project_Phase1_Microsoft/blob/dima/images/profit_by_year.png width="" title="Chart">
+  <img src=https://github.com/schahmatist/Flatiron_Project_Phase1_Microsoft/blob/dima/images/profit_by_genre.png width="" title="Chart">
+</p>
 
 ## Conclusions
 - Having analysed trends of movie profitability over time we have concluded that the industry is stable, with no discouraging negative trends over the past 2 decades with the excpetion of pandemic data. 
