@@ -175,7 +175,7 @@ full_merge_df["tmdb_net_profit"]  = full_merge_df["revenue"]-full_merge_df["budg
 # In[672]:
 
 sql="""
-select id, tconst, title,  release_date_x release_date, revenue, budget,  tmdb_net_profit net_profit, year, 
+select id, tconst, title,  release_date_x release_date, revenue, budget,  tmdb_net_profit net_profit, cast(year as integer) year, 
 vote_average, popularity, vote_count, runtime, genres
 from full_merge_df
 """
@@ -184,6 +184,7 @@ full_profit_df=sqldf(sql, globals())
 
 # In[746]:
 # Joining by Director and minutes/year
+######################################################################################################################
 
 type_info = csv_dict['rt.movie_info'][['id', 'director', 'runtime', 'rating']]
 
@@ -211,14 +212,26 @@ dir_time.dropna(subset=["runtime"], inplace=True)
 tconst_dir_time=dir_time.merge(tconst_dir_each, left_on=["nconst","runtime"], right_on=["director", "runtime_minutes"])
 tconst_dir_time.drop(columns = ['director_x','director_y'], inplace=True)
 
-
-# In[755]:
-
 full_profit_merge=full_profit_df.merge(tconst_dir_time[['runtime', 'rating', 'primary_name','tconst']], on=['tconst'], how="left")
-full_profit_merge["rating"].notna().sum()
+
+#full_profit_merge["rating"].notna().sum()
+######################################################################################################################
 
 
 # In[720]:
+
+full_profit_df["genre_id"]=full_profit_df['genres'].apply(clean_genres)
+full_profit_df.drop(columns='genres', inplace=True)
+full_profit_by_genre_id=full_profit_df.explode('genre_id')
+
+csv_dict["tmdb_genres"]["id"]=csv_dict["tmdb_genres"]["id"].astype(str)
+
+full_profit_by_genre_id.dropna(subset=['genre_id'], inplace=True)
+
+full_profit_by_genre=full_profit_by_genre_id.merge(csv_dict["tmdb_genres"], left_on=['genre_id'], right_on='id')
+full_profit_by_genre.drop(columns=["Unnamed: 0","id_y"], inplace=True)
+full_profit_by_genre.rename(columns={"name": "genre", "id_x":"id"}, inplace=True)
+
 
 
 
