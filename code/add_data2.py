@@ -165,11 +165,12 @@ for num,movie_id in enumerate(id_list):
                     "popularity":movie_json["popularity"], "vote_count":movie_json["vote_count"], 
                      "runtime":movie_json["runtime"], "genres":get_genre(movie_json["genres"]) }
         tmdb_list.append(tmdb_dict)
-#        if num == 5:
-#            break
+        if num % 500 == 0:
+            pd.DataFrame(tmdb_list).to_csv("data/zippedData/tmdb_imdb_gross_full.csv.gz", encoding='utf-8', compression='gzip', mode='a')
+            tmdb_list=[]
 
 
-pd.DataFrame(tmdb_list).to_csv("data/zippedData/tmdb_imdb_gross_full.csv.gz", encoding='utf-8', compression='gzip')
+pd.DataFrame(tmdb_list).to_csv("data/zippedData/tmdb_imdb_gross_full.csv.gz", encoding='utf-8', compression='gzip', mode='a')
 
 
 # In[90]:

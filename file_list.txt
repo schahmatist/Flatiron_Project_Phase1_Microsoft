@@ -10,6 +10,6 @@ rt.reviews.tsv.gz
 tmdb.movies.csv.gz
 tmdb_genres.csv.gz
 tmdb_imdb_gross.csv.gz
-tmdb_imdb_gross_test.csv.gz
+tmdb_imdb_gross_full.csv.gz
 tmdb_movie_ids.csv.gz
 tn.movie_budgets.csv.gz
