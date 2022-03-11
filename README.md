@@ -15,7 +15,6 @@ Our focus is ensuring and maximizing profitability and highlighting the steps to
 How is profitability in the industry trending over time?
   Does getting into the movie industry appear to be a promisng option?
 Are there varibales which correlate most with profitability?
-Which correlates more strongly with movie success; Crtitic reviews or population reviews?
 
 ## Data 
 Our data was pooled from a variety of sources including but not limited to the IMDB and TNDB, using over a million individual results. These results among many others include unique movie IDs, production costs and total sales, production crew IDs, genres and ratings. 
@@ -27,10 +26,18 @@ Utilizing data analysis methods including descriptive analysis, graphing trends 
 
 <p align="center">
   <img src=https://github.com/schahmatist/Flatiron_Project_Phase1_Microsoft/blob/dima/images/profit_by_year.png width="" title="Chart">
+  <img src=https://github.com/schahmatist/Flatiron_Project_Phase1_Microsoft/blob/dima/images/misc_profit_correlations.png width="" title="Chart">
+  <img src=https://github.com/schahmatist/Flatiron_Project_Phase1_Microsoft/blob/dima/images/avg_rating_correlations.png width="" title="Chart">
   <img src=https://github.com/schahmatist/Flatiron_Project_Phase1_Microsoft/blob/dima/images/profit_by_genre.png width="" title="Chart">
+  <img src=https://github.com/schahmatist/Flatiron_Project_Phase1_Microsoft/blob/dima/images/optimal_movie_length.png width="" title="Chart">
 </p>
 
 ## Conclusions
-- Having analysed trends of movie profitability over time we have concluded that the industry is stable, with no discouraging negative trends over the past 2 decades with the excpetion of pandemic data. 
-
+- The Movie industry has proven to be consistently profitable, with stable growth over the past 30 years
+- All publicity is good publiciity, popularity correlates strongly with profitbaility
+    - Promotion of any kind will contribute to success
+- Most profitbale
+    - Genre : Adventure / Science Fiction
+    - Rating: Perfect ratings (9-10) are too niche to be extremely profitabled 
+    - Length: Slightly more than 2 hours long
 
