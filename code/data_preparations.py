@@ -167,6 +167,7 @@ from full_merge_df
 """
 
 full_profit_df=sqldf(sql, globals())
+full_profit_df["ROI"]=full_profit_df["revenue"]/full_profit_df["budget"]*100
 
 ######################################################################################################################
 
@@ -186,40 +187,8 @@ full_profit_by_genre.rename(columns={"name": "genre", "id_x":"id"}, inplace=True
 
 # In[721]:
 
-director_nconst=csv_dict.get("imdb.title.principals").query("category == 'director'")
-full_profit_nconst_df=full_profit_df.merge(director_nconst[["tconst","nconst"]], on=["tconst"])
-full_profit_dir_df=full_profit_nconst_df.merge(csv_dict.get("imdb.name.basics")[["nconst","primary_name"]], on=["nconst"])
+#director_nconst=csv_dict.get("imdb.title.principals").query("category == 'director'")
+#full_profit_nconst_df=full_profit_df.merge(director_nconst[["tconst","nconst"]], on=["tconst"])
+#full_profit_dir_df=full_profit_nconst_df.merge(csv_dict.get("imdb.name.basics")[["nconst","primary_name"]], on=["nconst"])
 
-
-# In[746]:
-# Joining by Director and minutes/year
-######################################################################################################################
-
-# type_info = csv_dict['rt.movie_info'][['id', 'director', 'runtime', 'rating']]
-
-# name_key = csv_dict['imdb.name.basics'][['nconst', 'primary_name']]
-# dir_time = type_info.merge(name_key, left_on = 'director', right_on = 'primary_name')
-# dir_time.dropna(subset=["runtime"], inplace=True)
-# dir_time['runtime'] = dir_time['runtime'].apply(clean_runtime)
-# dir_time.rating.notna().sum()
-# 
-# tconst_dir1=csv_dict['imdb.title.crew'][['tconst', 'directors']].copy()
-# 
-# movie_id_names_time = csv_dict['imdb.title.basics'][['tconst', 'primary_title', 'runtime_minutes']].copy()
-# movie_id_names_time.dropna(subset=["runtime_minutes"], inplace=True)
-# 
-# tconst_dir = movie_id_names_time.merge(tconst_dir1, how = 'inner', on = 'tconst')
-# tconst_dir.dropna(subset=["directors"], inplace=True)
-# 
-# tconst_dir['director']= tconst_dir['directors'].str.split(',')
-# tconst_dir.drop(columns = 'directors', inplace = True)
-# tconst_dir_each=tconst_dir.explode("director")
-
-# In[749]:
-
-# dir_time.dropna(subset=["runtime"], inplace=True)
-# tconst_dir_time=dir_time.merge(tconst_dir_each, left_on=["nconst","runtime"], right_on=["director", "runtime_minutes"])
-# tconst_dir_time.drop(columns = ['director_x','director_y'], inplace=True)
-
-# full_profit_merge=full_profit_df.merge(tconst_dir_time[['runtime', 'rating', 'primary_name','tconst']], on=['tconst'], how="left")
 
