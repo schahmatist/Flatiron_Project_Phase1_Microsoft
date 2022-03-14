@@ -40,3 +40,4 @@ Utilizing data analysis methods including descriptive analysis, graphing trends 
     - Genre : Adventure / Science Fiction
     - Rating: Perfect ratings (9-10) are too niche to be extremely profitabled 
     - Length: Slightly more than 2 hours long
+
